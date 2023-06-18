@@ -1,0 +1,19 @@
+.dayAndDate{
+    margin: 20px 0 0 0;
+}
+
+.lower{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    align-items: center;
+}
+
+.upper{
+    font-weight: 600;
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    align-items: center;
+}

@@ -1,0 +1,33 @@
+.top-bar{
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 20px 0 10px 30px;
+}
+
+.top-item{
+    margin: 10px;
+    border-right: 1px rgba(0, 0, 0, 0.2) solid;
+    padding-right: 20px;
+}
+
+.time-div{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.timesheet-div{
+    font-size: 24px;
+    padding-top: 6px;
+    font-weight: 400;
+}
+
+.alltime-div{
+    font-size: 24px;
+    padding-top: 6px;
+    color: #3457CC;
+    font-weight: 600;
+}
+
+.top-bar div:last-child {
+    border-right: none;
+  }
