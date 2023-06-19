@@ -6,8 +6,8 @@ export default function SecondModal(props) {
 
     return (props.trigger)
         ? (
-            <div className='popup'>
-                <div className='popup-inner'>
+            <div className='popup-2'>
+                <div className='popup-inner-2'>
                     <button className='close-btn' onClick={() => props.setTrigger(false)}><CloseRounded /></button>
                     {props.children}
                     <Lower variant='modal2' setTrigger={props.setTrigger} />

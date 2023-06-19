@@ -1,6 +1,8 @@
+import { STRING_TIMESHEET } from "../utils/strings"
+
 function Timesheet() {
   return (
-    <div>Timesheet</div>
+    <div>{STRING_TIMESHEET}</div>
   )
 }
 

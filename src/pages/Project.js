@@ -1,6 +1,8 @@
+import { STRING_PROJECT } from "../utils/strings"
+
 function Project() {
   return (
-    <div>Project</div>
+    <div>{STRING_PROJECT}</div>
   )
 }
 

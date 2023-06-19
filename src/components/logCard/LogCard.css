@@ -14,6 +14,20 @@
     font-weight: 600;
     display: flex;
     padding: 20px 0;
+    justify-content: space-between;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     align-items: center;
+}
+
+.task-popup{
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgba(0, 10, 255, 0.7);
+    position: relative;
+    left: 60px;
+}
+
+.time{
+    position: relative;
+    left: -20px;
 }

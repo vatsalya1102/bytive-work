@@ -5,6 +5,7 @@ import home from '../../icons/home.png'
 import timesheet from '../../icons/timesheet.png'
 import client from '../../icons/client.png'
 import project from '../../icons/project.png'
+import { STRING_TEAMWORK } from '../../utils/strings'
 
 const SideNavbar = ({ children }) => {
 
@@ -36,7 +37,7 @@ const SideNavbar = ({ children }) => {
             <div className="sidebar">
                 <div className="top_section">
                     <Link className='logo-link' to='/'>
-                        <h1 className='logo'>teamwork<span style={{ color: '#FF22B1' }}>.</span></h1>
+                        <h1 className='logo'>{STRING_TEAMWORK}<span style={{ color: '#FF22B1' }}>.</span></h1>
                     </Link>
                 </div>
                 {

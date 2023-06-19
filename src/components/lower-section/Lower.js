@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '../button/Button'
 import './Lower.css'
+import { STRING_0MIN } from '../../utils/strings'
 
 const Lower = ({ orderList, parentArray, setParentArray, setOrderlist, variant, setButtonPopup , setTrigger}) => {
 
@@ -21,7 +22,7 @@ const Lower = ({ orderList, parentArray, setParentArray, setOrderlist, variant, 
                 <div style={{ float: 'right' }}>
                     <Button setOrderlist={setOrderlist} parentArray={parentArray} setParentArray={setParentArray} orderList={orderList} variant='button-5' label='Log these time entries' />
                 </div>
-                <div style={{ float: 'right' }} className="min">0 min</div>
+                <div style={{ float: 'right' }} className="min">{STRING_0MIN}</div>
             </div>
         )
     }

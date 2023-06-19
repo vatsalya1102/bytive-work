@@ -4,12 +4,13 @@ import more from '../icons/more.png'
 import { Button } from '../components/button/Button'
 import { LogCard } from '../components/logCard/LogCard'
 import { useEffect, useState } from 'react'
+import { STRING_ALL_TIME, STRING_BILL_6H, STRING_BILLABLE_6H, STRING_FILTERED_TOTALS, STRING_LOGGED } from '../utils/strings'
 
 function Home() {
   const [parentArray, setParentArray] = useState([]);
 
   useEffect(() => {
-    console.log(parentArray);
+    
   },[parentArray])
 
   return (
@@ -19,7 +20,7 @@ function Home() {
       <div className='parent-div'>
 
         <div className="headers">
-          <h3>All time</h3>
+          <h3>{STRING_ALL_TIME}</h3>
           <div className="buttons-div">
             <button className='button-1'><img src={more} alt="" /></button>
             <Button parentArray={parentArray} setParentArray={setParentArray} variant='button-2' label='Star timer' />
@@ -29,10 +30,10 @@ function Home() {
         </div>
 
         <div className="infobox">
-          <div>Filtered Totals: </div>
-          <div>Logged: 6h 55min</div>
-          <div>Billable: 6h 55min</div>
-          <div>Billed: 6h 55min</div>
+          <div>{STRING_FILTERED_TOTALS}</div>
+          <div>{STRING_LOGGED}</div>
+          <div>{STRING_BILLABLE_6H}</div>
+          <div>{STRING_BILL_6H}</div>
         </div>
 
         {parentArray.map((item, index) => (

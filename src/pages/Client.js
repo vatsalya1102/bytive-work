@@ -1,6 +1,8 @@
+import { STRING_CLIENT } from "../utils/strings"
+
 function Client() {
   return (
-    <div>Client</div>
+    <div>{STRING_CLIENT}</div>
   )
 }
 

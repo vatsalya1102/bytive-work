@@ -4,7 +4,7 @@ import './Button.css'
 import { useState } from 'react'
 import { ProjectPopup } from '../projectPopup/ProjectPopup.js'
 
-export const Button = ({ label, variant, parentArray, setParentArray, orderList, setOrderlist, setTrigger }) => {
+export const Button = ({ label, variant, parentArray, setParentArray, orderList, setOrderlist, setTrigger, handleButtonClick }) => {
     const [buttonPopup, setButtonPopup] = useState(false);
 
     const handleModal = () => {

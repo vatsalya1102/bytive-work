@@ -12,9 +12,10 @@
 }
   
 .popup-inner-2 {
-    position: relative;
+    position: absolute;
+    top: -40px;
     padding: 30px;
-    width: 50%;
+    width: 62%;
     height: auto;
     background: #fff;
     box-shadow: 0 4px 30px rgb(0 0 0 / 10%);

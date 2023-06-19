@@ -50,6 +50,8 @@ select{
     border: none;
     cursor: pointer;
     color: #000;
+    position: relative;
+    left: 25px;
 }
 
 .button-6{

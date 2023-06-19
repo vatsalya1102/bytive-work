@@ -5,8 +5,9 @@ import { Button } from '../button/Button'
 import { CloseRounded } from '@mui/icons-material'
 import { useState } from 'react'
 import TaskPopup from '../taskPopup/TaskPopup'
+import { STRING_PROJECT, STRING_DATE, STRING_WHO, STRING_DESCRIPTION, STRING_TIME, STRING_TASKLIST, STRING_END, STRING_START, STRING_BILLABLE, STRING_BILLED, STRING_START_TIME, STRING_HOURS, STRING_MINUTES, STRING_TASK } from '../../utils/strings.js'
 
-export const LogCard = ({ setOrderlist, orderList, numbering, variant, day, date, project, user, description, task, start, end, hours, minutes, hourdif, minutedif, parentArray, setParentArray }) => {
+export const LogCard = ({ setOrderlist, orderList, numbering, variant, day, date, project, user, description, task, start, end, hours, minutes, hourdif, minutedif, order }) => {
 
   const [taskState, setTaskState] = useState('');
 
@@ -34,52 +35,52 @@ export const LogCard = ({ setOrderlist, orderList, numbering, variant, day, date
       {variant === 'homepage' ? (<>
         <h2 className='dayAndDate'>{`${forDay()}, ${date.split('-')[2]} ${forMonth()}`}</h2>
         <div className="fields upper">
-          <div style={{ margin: '0 82px 0 0' }}>Project</div>
-          <div style={{ margin: '0 70px 0 0' }}>Who</div>
-          <div style={{ margin: '0 35px 0 0' }}>Description</div>
-          <div style={{ margin: '0 74px 0 0' }}>Task list</div>
-          <div style={{ margin: '0 80px 0 0' }}>Start</div>
-          <div style={{ margin: '0 72px 0 0' }}>End</div>
-          <div style={{ margin: '0 50px 0 0' }}>Billable</div>
-          <div style={{ margin: '0 70px 0 0' }}>Billed</div>
-          <div style={{ margin: '0 82px 0 0' }}>Time</div>
-          <div>Hours</div>
+          <div>{STRING_PROJECT}</div>
+          <div>{STRING_WHO}</div>
+          <div>{STRING_DESCRIPTION}</div>
+          <div>{STRING_TASKLIST}</div>
+          <div>{STRING_START}</div>
+          <div>{STRING_END}</div>
+          <div>{STRING_BILLABLE}</div>
+          <div>{STRING_BILLED}</div>
+          <div>{STRING_TIME}</div>
+          <div>{STRING_HOURS}</div>
         </div>
         <div className="fields lower">
           <div>{project}</div>
-          <div>{user}</div>
-          <div>{description}</div>
-          <div>{task}</div>
+          <div style={{ marginLeft: '-22px' }}>{user}</div>
+          <div>{description.slice(0,4).concat("..")}</div>
+          <div style={{ paddingLeft: '30px' }}>{task}</div>
           <div>{start}</div>
-          <div style={{margin: '0 0 0 -20px'}}>{end}</div>
-          <div><CheckCircle style={{ color: "rgba(4, 210, 0, 1)" }} /></div>
-          <div><Cancel /></div>
-          <div style={{ position: 'relative', left: '-20px' }}>{`${hourdif}h${minutedif}min`}</div>
-          <div style={{ position: 'relative', left: '-20px' }}>{hourdif}</div>
+          <div style={{ position: 'relative', right: '20px' }}>{end}</div>
+          <div style={{ position: 'relative', right: '20px' }}><CheckCircle style={{ color: "rgba(4, 210, 0, 1)" }} /></div>
+          <div style={{ position: 'relative', right: '10px' }}><Cancel /></div>
+          <div className='time'>{`${hourdif}h${minutedif}min`}</div>
+          <div className='time'>{hourdif}</div>
         </div>
       </>
       ) : (
         <>
           <div className="fields upper">
-            <div style={{ margin: '0 55px 0 0' }}>Project</div>
-            <div style={{ margin: '0 85px 0 0' }}>Date</div>
-            <div style={{ margin: '0 16px 0 0' }}>Start time</div>
-            <div style={{ margin: '0 16px 0 0' }}>Hours</div>
-            <div style={{ margin: '0 16px 0 0' }}>Minutes</div>
-            <div style={{ margin: '0 16px 0 0' }}>Discription</div>
-            <div style={{ margin: '0 70px 0 0' }}>Task</div>
-            <div>Billable</div>
+            <div>{STRING_PROJECT}</div>
+            <div>{STRING_DATE}</div>
+            <div>{STRING_START_TIME}</div>
+            <div>{STRING_HOURS}</div>
+            <div>{STRING_MINUTES}</div>
+            <div>{STRING_DESCRIPTION}</div>
+            <div>{STRING_TASK}</div>
+            <div>{STRING_BILLABLE}</div>
           </div>
           <div className="fields lower">
             <div>{project}</div>
-            <div>{date}</div>
-            <div>{start}</div>
+            <div style={{ position: 'relative', right: '20px' }}>{date}</div>
+            <div style={{ position: 'relative', right: '40px' }}>{start}</div>
             <div>{hours}</div>
-            <div>{minutes}</div>
-            <div>{description}</div>
-            <div style={{ cursor: 'pointer', textDecoration: 'underline' }} onClick={handleModal}>{(!taskState) ? 'Set task' : (taskState)}</div>
+            <div style={{ position: 'relative', left: '40px' }}>{minutes}</div>
+            <div style={{ position: 'relative', left: '73px' }}>{description.slice(0,7).concat("..")}</div>
+            <div className="task-popup" onClick={handleModal}>{(!taskState) ? 'Set task' : (taskState)}</div>
             <TaskPopup setTaskState={setTaskState} task={task} setOrderlist={setOrderlist} orderList={orderList} numbering={numbering} buttonPopup={buttonPopup} setButtonPopup={setButtonPopup} />
-            <div>Billable</div>
+            <div style={{ position: 'relative', left: '45px' }}>{STRING_BILLABLE}</div>
             <Button variant='danger' label={<CloseRounded />} />
           </div>
         </>
